@@ -14,7 +14,7 @@
         <select wire:model="salario" id="salario" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
             <option>-- Seleccione --</option>
             @foreach ($salarios as $salario)
-                <option valie="{{$salario->id}}">{{$salario->salario}}</option>
+                <option value="{{$salario->id}}">{{$salario->salario}}</option>
             @endforeach
         </select>
         @error('salario')
@@ -28,7 +28,7 @@
         <select wire:model="categoria" id="categoria" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
 >           <option>-- Seleccione --</option>
             @foreach ($categorias as $categoria)
-                <option valie="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
             @endforeach
         </select>
         @error('categoria')
@@ -56,8 +56,8 @@
 
     <!-- Descripción del puesto -->
     <div>
-        <x-input-label for="empresa" :value="__('Descripción Puesto')" />
-        <textarea wire:descripcion="descripcion" id="descripcion" cols="30" rows="10" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" placeholder="Descripcion general del puesto"></textarea>
+        <x-input-label for="descripcion" :value="__('Descripción Puesto')" />
+        <textarea wire:model="descripcion" id="descripcion" cols="30" rows="10" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" placeholder="Descripcion general del puesto"></textarea>
         @error('descripcion')
         <livewire:mostrar-alerta :message="$message"/>
         @enderror
@@ -66,7 +66,7 @@
     <!-- Título Vacante -->
     <div>
         <x-input-label for="imagen" :value="__('Imagen')" />
-        <x-text-input id="imagen" class="block mt-1 mb-5 w-full" type="file" wire:model="imagen" accept="image/*" required autofocus/>
+        <x-text-input id="imagen" class="block mt-1 mb-5 w-full" type="file" wire:model="imagen" accept="image/*" autofocus/>
         
         <div class="my-5">
             @if($imagen)
