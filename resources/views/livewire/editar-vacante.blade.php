@@ -68,6 +68,10 @@
         <x-input-label for="imagen" :value="__('Imagen')" />
         <x-text-input id="imagen" class="block mt-1 mb-5 w-full" type="file" wire:model="imagen" accept="image/*" autofocus/>
         
+        <div class="my-5 w-80">
+            <x-input-label :value="__('Imagen')" />
+            <img src="{{ asset('storage/vacantes/' . $imagen)}}" alt="{{ 'Imagen Vacante ' . "titulo"}}">
+        </div>
         {{--<div class="my-5">
             @if($imagen)
                 Preview Imagen:
@@ -81,6 +85,6 @@
     </div>
 
     <x-primary-button class="w-full justify-center">
-        Crear Vacante
+        Guardar Cambios
     </x-primary-button>
 </form>
