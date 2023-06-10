@@ -81,7 +81,7 @@
         </div>
 
         @error('imagen_nueva')
-        <livewire:mostrar-alerta :message="$message"/>
+            <livewire:mostrar-alerta :message="$message"/>
         @enderror
     </div>
 
