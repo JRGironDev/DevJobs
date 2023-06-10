@@ -45,6 +45,4 @@
         <livewire:postular-vacante/>
     @endcannot
 
-    
-
 </div>
