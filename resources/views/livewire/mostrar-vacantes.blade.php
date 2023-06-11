@@ -15,7 +15,7 @@
                 </div>
     
                 <div class="flex flex-col md:flex-row items-stretch gap-3  mt-5 md:mt-0">
-                    <a href="#" class="bg-slate-600 py-2 px-4 rounded-lg text-white text-xs font-bold text-center uppercase">Candidatos</a>
+                    <a href="{{route('candidatos.index', $vacante)}}" class="bg-slate-600 py-2 px-4 rounded-lg text-white text-xs font-bold text-center uppercase">Candidatos</a>
                     <a href="{{route('vacantes.edit', $vacante->id)}}" class="bg-blue-600 py-2 px-4 rounded-lg text-white text-xs font-bold text-center uppercase">Editar</a>
                     <button wire:click="$emit('mostrarAlerta', {{$vacante->id}})" class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold text-center uppercase">Eliminar</button>
                 </div>
