@@ -109,6 +109,18 @@
             <x-responsive-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.create')">
                 {{ __('Crear Vacante') }}
             </x-responsive-nav-link>
+
+            @if (auth()->user()->rol === 2)
+            <div class="flex gap-2 items-center p-3">
+                <a class="h-7 w-7 rounded-full bg-indigo-600 hover:bg-indigo-800 flex flex-col justify-center items-center text-sm font-extrabold text-white" href="{{ route('notificaciones')}}">
+                    {{auth()->user()->unreadNotifications->count()}}
+                </a>
+                <p class="text-base font-medium text-gray-600">
+                    @choice('Notificacion|Notificaciones', auth()->user()->unreadNotifications->count() )
+                </p>
+            </div>
+
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
