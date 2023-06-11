@@ -38,7 +38,7 @@ class PostularVacante extends Component
             'cv'=>$datos['cv']
         ]);
 
-        // Crear la notificación y enviar el email
+        // Crear la notificación y enviar el <e></e>mail
         $this->vacante->reclutador->notify(new NuevoCandidato($this->vacante->id, $this->vacante->titulo, auth()->user()->id));
 
         // Mostrar al usuario un mensaje de ok
