@@ -10,9 +10,11 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h1 class="text-4xl font-bold text-center my-10">Mis Notificaciones </h1>
-                          
+                    
+                    <div class="divide-y divide-gray-200">
+
                     @forelse ($notificaciones as $notificacion)
-                        <div class="p-5 border border-gray-200 md:flex md:justify-between md:items-center">
+                        <div class="p-5 md:flex md:justify-between md:items-center">
                             <div>
                                 <p>Tienes un nuevo candidato en:
                                     <span class="font-bold">{{$notificacion->data['nombre_vacante']}}</span>
@@ -24,12 +26,13 @@
                             </div>
 
                             <div class="mt-5 md:mt-0">
-                                <a href="" class="bg-indigo-600 p-3 test-sm font-bold rounded-lg text-white">Ver Candidatos</a>
+                                <a href="{{route('candidatos.index', $notificacion->data['id_vacante'])}}" class="bg-indigo-600 p-3 test-sm font-bold rounded-lg text-white">Ver Candidatos</a>
                             </div>
                         </div>
                     @empty
                         <p class="text-center text-gray-700">No hay notificaciones</p>
                     @endforelse
+                </div>
                 </div>
             </div>
         </div>
